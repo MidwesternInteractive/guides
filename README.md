@@ -3,7 +3,7 @@ The one style guide to rule them all... or something...
 
 Language/freamwork-specific style guides
 
-- [Laravel](#)
+- [Laravel](https://github.com/MidwesternInteractive/style/tree/master/laravel)
 - [HTML](https://github.com/MidwesternInteractive/style/tree/master/html)
 - [PHP](#)
 
