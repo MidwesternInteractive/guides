@@ -7,7 +7,7 @@ Language/freamwork-specific style guides
 - [HTML](#)
 - [PHP](#)
 
-### Formatting
+## Formatting
 - Avoid inline comments.
 - Break long lines after 80 characters.
 - Delete trailing whitespace.
@@ -22,12 +22,12 @@ Language/freamwork-specific style guides
 - Use single quotes for 
 - For arrays, separate every item with a comma (even the last one)
 
-### Naming
+## Naming
 Avoid abbreviations. 
 Avoid object types in names (user_array, email_collection, UserService, InspectionTrait). Try to come up with a more expressive name.
 Name variables, methods, and classes based on what they are/do.
 Treat acronyms as words in names (XmlHttpRequest not XMLHTTPRequest), even if the acronym is the entire name (class Html not class HTML).
 
-### Organization
+## Organization
 - Order methods so that caller methods are earlier in the file than the methods they call.
 - Order methods so that methods are as close as possible to other methods they call.
