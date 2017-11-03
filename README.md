@@ -7,6 +7,8 @@ Language/freamwork-specific style guides
 - [HTML](https://github.com/MidwesternInteractive/style/tree/master/html)
 - [PHP](#)
 
+## How Tos
+
 ## Formatting
 - Avoid inline comments.
 - Break long lines after 80 characters.
