@@ -20,6 +20,17 @@ Language/freamwork-specific style guides
 ```
 
 - Break long lines after 80 characters.
+
+```php
+	// Bad - Line exceeds 80 characters
+	$query->where('column_name', 'This is a long line of code')->orWhere('column_name', '>=', '80')->get();
+
+	// Good - Line has been broken beautifully
+	$query->where('column_name', 'This is a great break of code')
+		->orWhere('column_name', '>=', '80')
+		->get();
+```
+
 - Delete trailing whitespace.
 - Don't include spaces after (, [ or before ], ).
 - Don't misspell.
