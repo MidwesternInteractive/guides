@@ -10,6 +10,16 @@ Language/freamwork-specific style guides
 ## How Tos
 
 ## Formatting
+- Don't misspell.
+
+```php
+// Bad - If you don't know why this is bad please press cmd+q
+$knewMessage = 'This is a knew message.';
+
+// Good
+$newMessage = 'This is a new message.';
+```
+
 - Avoid inline comments.
 
 ```php
@@ -31,7 +41,7 @@ $query->where('column_name', 'This is a great break of code')
     ->get();
 ```
 
-- Delete trailing whitespace.
+- No trailing whitespace.
 ```php
 // Bad - White space at the end
 if ($whiteSpace) {
@@ -42,18 +52,25 @@ if ($whiteSpace) {
 if (!$whiteSpace) {
  return $babyHasBeenBorn;
 }
-
 ```
-- Don't include spaces after (, [ or before ], ).
-- Don't misspell.
+- Don't include spaces next to the start or closing parenthesis, or brackets.
+
 ```php
-// Bad - If you don't know why this is bad please press cmd+q
-$knewMessage = 'This is a knew message.';
+// Bad
+function $foo( $bar )
+{
+    return $bar;
+}
 
 // Good
-$newMessage = 'This is a new message.';
+function $foo($bar)
+{
+    return $bar;
+}
 ```
+
 - If you have more than 2 elements in an array or object please break it up. 2 is company 3 is a crowd. Keep the elements, and closing brace on their own lines.
+
 ```php
 // Bad - More than three elements on a line
 $names = ['Han Solo', 'Luke Skywalker', 'Obi Wan'];
@@ -74,8 +91,9 @@ $names = [
     'Obi Wan'
 ];
 ```
-- Use 4 space indentation (no tabs).
+
 - Place first and closing parenthesis for a function on their own lines.
+
 ```php
 // Bad
 function $foo($bar) {
@@ -115,7 +133,8 @@ function bar($foo)
 ```
 
 - Use spaces after commas, after colons and semicolons.
-- If you break up a chain of method calls, keep each method call on its own line. Place the -> at the beginning of the line. [Example](https://github.com/MidwesternInteractive/style/blob/master/examples/break-up-method-calls.php) 
+- If you break up a chain of method calls, keep each method call on its own line. Place the -> at the beginning of the line.
+
 ```php
 // Bad
 $object->methodOne()->methodTwo()->methodThree()->lastMethod();
@@ -126,7 +145,9 @@ $object->methodOne()
     ->methodThree()
     ->lastMethod();
 ```
+
 - Use spaces around operators
+
 ```php
 // Bad
 if ($test==$result) {
@@ -138,7 +159,9 @@ if ($test == $result) {
     return true;
 }
 ```
+
 - Use single quotes for everything.
+
 ```php
 // Bad
 $var = "Value";
