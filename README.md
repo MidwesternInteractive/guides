@@ -27,20 +27,20 @@ $query->where('column_name', 'This is a long line of code')->orWhere('column_nam
 
 // Good - Line has been broken beautifully
 $query->where('column_name', 'This is a great break of code')
-	->orWhere('column_name', '>=', '80')
-	->get();
+    ->orWhere('column_name', '>=', '80')
+    ->get();
 ```
 
 - Delete trailing whitespace.
 ```php
 // Bad - White space at the end
 if ($whiteSpace) {
-	return $someOneHasDied;
+ return $someOneHasDied;
 }   
 
 // Good - No White space at the end
 if (!$whiteSpace) {
-	return $babyHasBeenBorn;
+ return $babyHasBeenBorn;
 }
 
 ```
@@ -53,14 +53,99 @@ $knewMessage = 'This is a knew message.';
 // Good
 $newMessage = 'This is a new message.';
 ```
-- If you break up an array, keep the elements on their own lines and closing curly brace on its own line.
+- If you have more than 2 elements in an array or object please break it up. 2 is company 3 is a crowd. Keep the elements, and closing brace on their own lines.
+```php
+// Bad - More than three elements on a line
+$names = ['Han Solo', 'Luke Skywalker', 'Obi Wan'];
+
+// Bad - Closing brace should have its own line.
+$names = [
+    'Han Solo',
+    'Luke Skywalker',
+    'Obi Wan'];
+
+// Good - 2 elements on the same line is fine
+$names = ['Han Solo', 'Luke Skywalker'];
+
+// Good - Elements are broken up to their own lines as well as closing brace
+$names = [
+    'Han Solo',
+    'Luke Skywalker',
+    'Obi Wan'
+];
+```
 - Use 4 space indentation (no tabs).
+- Place first and closing parenthesis for a function on their own lines.
+```php
+// Bad
+function $foo($bar) {
+    return $bar
+}
+
+// Good
+function $foo($bar)
+{
+    return $bar;
+}
+```
+
 - Use an empty line between methods.
-- Use spaces after commas, after colons and semicolons, around { and before }.
+
+```php
+// Bad
+function foo($bar)
+{
+    return $bar;
+}
+function bar($foo)
+{
+    return $foo;
+}
+
+// Good
+function foo($bar)
+{
+    return $bar;
+}
+
+function bar($foo)
+{
+    return $foo;
+}
+```
+
+- Use spaces after commas, after colons and semicolons.
 - If you break up a chain of method calls, keep each method call on its own line. Place the -> at the beginning of the line. [Example](https://github.com/MidwesternInteractive/style/blob/master/examples/break-up-method-calls.php) 
-- Use spaces around operators ($var != 'example')
-- Use single quotes for 
-- For arrays, separate every item with a comma (even the last one)
+```php
+// Bad
+$object->methodOne()->methodTwo()->methodThree()->lastMethod();
+
+// Good
+$object->methodOne()
+    ->methodTwo()
+    ->methodThree()
+    ->lastMethod();
+```
+- Use spaces around operators
+```php
+// Bad
+if ($test==$result) {
+    return false;
+}
+
+// Good
+if ($test == $result) {
+    return true;
+}
+```
+- Use single quotes for everything.
+```php
+// Bad
+$var = "Value";
+
+// Good
+$var = 'Value';
+```
 
 ## Naming
 - Avoid abbreviations. 
