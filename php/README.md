@@ -1,5 +1,8 @@
 # PHP Style Guide
 - [Code Editor](#code-editor)
+- [Standards](#standards)
+-- [Declarations](#declarations)
+
 # Code Editor
 
 # Standards
