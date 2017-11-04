@@ -11,9 +11,14 @@ Language/freamwork-specific style guides
 
 ## Formatting
 - Avoid inline comments.
-``
-	Test
-``
+
+```php
+	$boolean = false; // Bad Comment
+
+	// Good Comment
+	$boolean = true;
+```
+
 - Break long lines after 80 characters.
 - Delete trailing whitespace.
 - Don't include spaces after (, [ or before ], ).
