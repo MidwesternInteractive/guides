@@ -13,27 +13,46 @@ Language/freamwork-specific style guides
 - Avoid inline comments.
 
 ```php
-	$boolean = false; // Bad Comment
+$boolean = false; // Bad Comment
 
-	// Good Comment
-	$boolean = true;
+// Good Comment
+$boolean = true;
 ```
 
 - Break long lines after 80 characters.
 
 ```php
-	// Bad - Line exceeds 80 characters
-	$query->where('column_name', 'This is a long line of code')->orWhere('column_name', '>=', '80')->get();
+// Bad - Line exceeds 80 characters
+$query->where('column_name', 'This is a long line of code')->orWhere('column_name', '>=', '80')->get();
 
-	// Good - Line has been broken beautifully
-	$query->where('column_name', 'This is a great break of code')
-		->orWhere('column_name', '>=', '80')
-		->get();
+// Good - Line has been broken beautifully
+$query->where('column_name', 'This is a great break of code')
+	->orWhere('column_name', '>=', '80')
+	->get();
 ```
 
 - Delete trailing whitespace.
+```php
+// Bad - White space at the end
+if ($whiteSpace) {
+	return $someOneHasDied;
+}   
+
+// Good - No White space at the end
+if (!$whiteSpace) {
+	return $babyHasBeenBorn;
+}
+
+```
 - Don't include spaces after (, [ or before ], ).
 - Don't misspell.
+```php
+// Bad - If you don't know why this is bad please press cmd+q
+$knewMessage = 'This is a knew message.';
+
+// Good
+$newMessage = 'This is a new message.';
+```
 - If you break up an array, keep the elements on their own lines and closing curly brace on its own line.
 - Use 4 space indentation (no tabs).
 - Use an empty line between methods.
