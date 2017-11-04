@@ -11,6 +11,9 @@ Language/freamwork-specific style guides
 
 ## Formatting
 - Avoid inline comments.
+``
+	Test
+``
 - Break long lines after 80 characters.
 - Delete trailing whitespace.
 - Don't include spaces after (, [ or before ], ).
