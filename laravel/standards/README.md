@@ -225,6 +225,16 @@ function xmlHttpRequest()
 ---
 
 ## Arrays
+Use brackets for arrays.
+
+```php
+// Bad
+$emails = array('email@one.com', 'email@two.com');
+
+// Good
+$emails = ['One', 'Two'];
+```
+
 If you have more than 2 elements in an array please break it up. 2 is company 3 is a crowd. Keep the elements, and closing brace on their own lines.
 
 ```php
@@ -251,6 +261,49 @@ $names = [
 ---
 
 ## Objects
+Use array to create empty object
+
+```php
+// Bad
+$new_object = new \stdClass;
+$new_object->value_1 = 'Defined Value 1';
+$new_object->value_2 = 'Defined Value 2';
+
+// Bad
+$new_object = new class{};
+$new_object->value_1 = 'Defined Value 1';
+$new_object->value_2 = 'Defined Value 2';
+
+// Good
+$new_object = (object) [
+    'value_1' => 'Defined Value 1',
+    'value_2' => 'Defined Value 2',
+];
+    
+```
+
+If you have more than 2 elements in an object please break it up. 2 is company 3 is a crowd. Keep the elements, and closing brace on their own lines.
+
+```php
+// Bad - More than three elements on a line
+$names = (object) ['Han Solo', 'Luke Skywalker', 'Obi Wan'];
+
+// Bad - Closing brace should have its own line.
+$names = (object) [
+    'Han Solo',
+    'Luke Skywalker',
+    'Obi Wan'];
+
+// Good - 2 elements on the same line is fine
+$names = (object) ['Han Solo', 'Luke Skywalker'];
+
+// Good - Elements are broken up to their own lines as well as closing brace
+$names = (object) [
+    'Han Solo',
+    'Luke Skywalker',
+    'Obi Wan'
+];
+```
 
 ---
 
