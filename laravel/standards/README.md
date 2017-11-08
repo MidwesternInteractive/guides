@@ -55,6 +55,50 @@ function getAvailableAppointmentTimes()
  
 ```
 
+
+Classes must be camel case.
+
+```php
+// Bad
+class camelCase
+{
+    public function classMethod()
+    {
+        return 'Bad';
+    }
+}
+
+// Good
+class CamelCase
+{
+    public function classMethod()
+    {
+        return 'Good';
+    }
+}
+```
+
+Method names must be lower camel case.
+
+```php
+// Bad
+function ThisIsNotCamelCase($hello)
+{
+    return $hello . 'World!';
+}
+
+function neither_is_this()
+{
+    return $this->called('Hello');
+}
+
+// Good
+function thisIsACamelCaseExample()
+{
+    return $this->called('Hello');
+}
+```
+
 Treat acronyms as words in names.
 
 ```php
