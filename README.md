@@ -1,4 +1,4 @@
-a## MWI Style Guide
+# Code Guide
 The one style guide to rule them all... or something...
 
 Language/freamwork-specific style guides
@@ -45,12 +45,14 @@ Name variables, methods, and classes based on what they are/do.
 
 ```php
 // Bad
-function times() {
+function times()
+{
     return 'What times, and how?'
 }
 
 // Good
-function getAvailableAppointmentTimes() {
+function getAvailableAppointmentTimes()
+{
     return '';
 }
  
@@ -60,12 +62,14 @@ Treat acronyms as words in names.
 
 ```php
 // Bad
-function XMLHTTPRequest() {
+function XMLHTTPRequest()
+{
     return 'Bad';
 }
 
 // Good
-function xmlHttpRequest() {
+function xmlHttpRequest()
+{
     return 'Good';
 }
 ```
