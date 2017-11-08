@@ -1,4 +1,4 @@
-# PHP Style Guide
+# Standards
 - [Naming](#naming)
 - [Organization](#organization)
 - [Methods](#methods)
@@ -6,9 +6,7 @@
 - [Conditionals](#conditionals)
 - [Loops](#loops)
 
-# Code Editor
-
-# Standards
+---
 ## Naming
 Avoid abbreviations. 
 Avoid object types in names (user_array, email_collection, UserService, InspectionTrait). Try to come up with a more expressive name.
