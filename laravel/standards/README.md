@@ -6,6 +6,7 @@
 - [Loops](#loops)
 
 ---
+
 ## Naming
 Declare variables with snake case.
 ```php
@@ -71,6 +72,7 @@ function xmlHttpRequest()
 ```
 
 ---
+
 ## Organization
 Order methods so that caller methods are earlier in the file than the methods they call, and so methods are as close as possible to other methods they call.
 
@@ -96,8 +98,10 @@ function called($hello)
 {
     return $hello . 'World!';
 }
+```
 
 ---
+
 ## Methods
 Place first and closing parenthesis for a function on their own lines.
 
@@ -168,8 +172,9 @@ $object->methodOne()
     ->lastMethod();
 ```
 
-## Declarations
+---
 
+## Declarations
 Use single quotes for everything.
 
 ```php
@@ -180,8 +185,9 @@ $var = "Value";
 $var = 'Value';
 ```
 
-## Arrays
+---
 
+## Arrays
 If you have more than 2 elements in an array please break it up. 2 is company 3 is a crowd. Keep the elements, and closing brace on their own lines.
 
 ```php
@@ -205,9 +211,13 @@ $names = [
 ];
 ```
 
-## Objects
-## Conditionals
+---
 
+## Objects
+
+---
+
+## Conditionals
 Use spaces around operators
 
 ```php
@@ -221,5 +231,7 @@ if ($test == $result) {
     return true;
 }
 ```
+
+---
 
 ## Loops
