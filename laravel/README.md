@@ -1,5 +1,5 @@
 # Laravel Style Guide
-- [Code Standards](https://github.com/MidwesternInteractive/style/tree/master/standards)
+- [Code Standard](https://github.com/MidwesternInteractive/style/tree/master/standard)
 - [Migrations](https://github.com/MidwesternInteractive/style/tree/master/migrations)
 - [Seeders](https://github.com/MidwesternInteractive/style/tree/master/seeders)
 - [Tests](https://github.com/MidwesternInteractive/style/tree/master/tests)
