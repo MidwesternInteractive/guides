@@ -1,181 +1,97 @@
-## MWI Style Guide
+a## MWI Style Guide
 The one style guide to rule them all... or something...
 
 Language/freamwork-specific style guides
 
-- [Laravel](https://github.com/MidwesternInteractive/style/tree/master/laravel)
 - [HTML](https://github.com/MidwesternInteractive/style/tree/master/html)
-- [PHP](#)
+- CSS 
+- [JS](https://github.com/airbnb/javascript)
+- [Laravel](https://github.com/MidwesternInteractive/style/tree/master/laravel)
 
-## How Tos
+---
 
-## Formatting
-- Don't misspell.
-
+## Overview
+Declare variables with snake case.
 ```php
-// Bad - If you don't know why this is bad please press cmd+q
-$knewMessage = 'This is a knew message.';
+// Bad
+$canYouReadThis = 'Not very easy.';
 
 // Good
-$newMessage = 'This is a new message.';
+$you_can_read_this = 'Much better.';
 ```
 
-- Avoid inline comments.
-
-```php
-$boolean = false; // Bad Comment
-
-// Good Comment
-$boolean = true;
-```
-
-- Break long lines after 80 characters.
-
-```php
-// Bad - Line exceeds 80 characters
-$query->where('column_name', 'This is a long line of code')->orWhere('column_name', '>=', '80')->get();
-
-// Good - Line has been broken beautifully
-$query->where('column_name', 'This is a great break of code')
-    ->orWhere('column_name', '>=', '80')
-    ->get();
-```
-
-- No trailing whitespace.
-```php
-// Bad - White space at the end
-if ($whiteSpace) {
- return $someOneHasDied;
-}   
-
-// Good - No White space at the end
-if (!$whiteSpace) {
- return $babyHasBeenBorn;
-}
-```
-- Don't include spaces next to the start or closing parenthesis, or brackets.
+Avoid abbreviations. 
 
 ```php
 // Bad
-function $foo( $bar )
-{
-    return $bar;
-}
+$f_name = 'first name';
 
 // Good
-function $foo($bar)
-{
-    return $bar;
-}
+$last_name = 'last name';
 ```
 
-- If you have more than 2 elements in an array or object please break it up. 2 is company 3 is a crowd. Keep the elements, and closing brace on their own lines.
-
-```php
-// Bad - More than three elements on a line
-$names = ['Han Solo', 'Luke Skywalker', 'Obi Wan'];
-
-// Bad - Closing brace should have its own line.
-$names = [
-    'Han Solo',
-    'Luke Skywalker',
-    'Obi Wan'];
-
-// Good - 2 elements on the same line is fine
-$names = ['Han Solo', 'Luke Skywalker'];
-
-// Good - Elements are broken up to their own lines as well as closing brace
-$names = [
-    'Han Solo',
-    'Luke Skywalker',
-    'Obi Wan'
-];
-```
-
-- Place first and closing parenthesis for a function on their own lines.
+Avoid object types in names and try to come up with a more expressive name.
 
 ```php
 // Bad
-function $foo($bar) {
-    return $bar
-}
+$user_array = [ 'email@email.com', 'email2@email.com'];
 
 // Good
-function $foo($bar)
-{
-    return $bar;
-}
+$user_emails = [ 'email@email.com', 'email2@email.com'];
+
 ```
 
-- Use an empty line between methods.
+Name variables, methods, and classes based on what they are/do.
 
 ```php
 // Bad
-function foo($bar)
-{
-    return $bar;
-}
-function bar($foo)
-{
-    return $foo;
+function times() {
+    return 'What times, and how?'
 }
 
 // Good
-function foo($bar)
-{
-    return $bar;
+function getAvailableAppointmentTimes() {
+    return '';
 }
-
-function bar($foo)
-{
-    return $foo;
-}
+ 
 ```
 
-- Use spaces after commas, after colons and semicolons.
-- If you break up a chain of method calls, keep each method call on its own line. Place the -> at the beginning of the line.
+Treat acronyms as words in names.
 
 ```php
 // Bad
-$object->methodOne()->methodTwo()->methodThree()->lastMethod();
-
-// Good
-$object->methodOne()
-    ->methodTwo()
-    ->methodThree()
-    ->lastMethod();
-```
-
-- Use spaces around operators
-
-```php
-// Bad
-if ($test==$result) {
-    return false;
+function XMLHTTPRequest() {
+    return 'Bad';
 }
 
 // Good
-if ($test == $result) {
-    return true;
+function xmlHttpRequest() {
+    return 'Good';
 }
 ```
 
-- Use single quotes for everything.
+Order methods so that caller methods are earlier in the file than the methods they call, and so methods are as close as possible to other methods they call.
 
 ```php
 // Bad
-$var = "Value";
+function called($hello)
+{
+    return $hello . 'World!';
+}
+
+function caller()
+{
+    return $this->called('Hello');
+}
 
 // Good
-$var = 'Value';
+function caller()
+{
+    return $this->called('Hello');
+}
+
+function called($hello)
+{
+    return $hello . 'World!';
+}
 ```
-
-## Naming
-- Avoid abbreviations. 
-- Avoid object types in names (user_array, email_collection, UserService, InspectionTrait). Try to come up with a more expressive name.
-- Name variables, methods, and classes based on what they are/do.
-- Treat acronyms as words in names (XmlHttpRequest not XMLHTTPRequest), even if the acronym is the entire name (class Html not class HTML).
-
-## Organization
-- Order methods so that caller methods are earlier in the file than the methods they call.
-- Order methods so that methods are as close as possible to other methods they call.
