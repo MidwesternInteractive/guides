@@ -308,20 +308,78 @@ $names = (object) [
 ---
 
 ## Conditionals
-Use spaces around operators
+Keep open parenthises on the same line as conditional call
 
 ```php
-// Bad
-if ($test==$result) {
-    return false;
+//Bad
+if ($test == $result)
+{
+    echo 'Bad.';
+} else
+{
+    echo 'Really bad.'
 }
 
 // Good
 if ($test == $result) {
-    return true;
+    echo 'Good.';
+} else {
+    echo 'Really good.'
 }
+
 ```
 
+Use spaces around operators
+
+```php
+// Bad
+return ($test==$result);
+
+// Good
+return ($test == $result);
+```
+Use Short-circuit for simple if's
+
+```php
+// Bad
+isset($test) ? $test->callFunction() : null;
+!isset($test) ? null : $test->callFunction();
+
+// Good
+isset($test) and $test->callFunction();
+isset($test) ?: $test->callFunction();
+
+```
+
+Use ternary for simple if / else
+
+```php
+// Bad
+if ($test == $result) {
+    return 'Output Something!';
+} else {
+    return 'Output Something Different!';
+}
+
+// Good
+return ($test == $result) ? 'Output Something!' : 'Output Something Different';
+
+```
+
+Use expression result for booleans
+
+```php
+// Bad
+if ($test == $result) {
+    return true;
+} else {
+    return false;
+}
+
+// Good 
+return ($test == $result);
+
+```
 ---
 
 ## Loops
