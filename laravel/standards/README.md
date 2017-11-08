@@ -1,4 +1,4 @@
-# Standards
+# Laravel Code Standards
 - [Methods](#methods)
 - [Declarations](#declarations)
 - [Conditionals](#conditionals)
