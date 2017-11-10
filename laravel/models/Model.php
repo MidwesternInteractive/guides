@@ -4,13 +4,20 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-// If Trait
+// Trait
 use App\Traits\ModelName;
 
-// If Soft Deleting
+// Soft Deleting
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-// If lifecycle events are used.
+// Events.
+use App\Events\ModelSaved;
+use App\Events\ModelDeleted;
+
+// Global Scopes
+use App\Scopes\ModelScope;
+
+// Lifecycle events are observed.
 use App\Observers\ModelObserver;
 
 class ModelName extends Model
@@ -50,6 +57,16 @@ class ModelName extends Model
         'column_name_eight'
     ];
 
+     /**
+     * The event map for the model.
+     *
+     * @var array
+     */
+    protected $dispatchesEvents = [
+        'saved' => ModelSaved::class,
+        'deleted' => ModelDeleted::class,
+    ];
+
     /**
      * Bootstrap any application services.
      *
@@ -57,7 +74,10 @@ class ModelName extends Model
      */
     public function boot()
     {
-        // Lifecycle Events should be handled with an observer.
+        // Global Scope Registered
+        static::addGlobalScope(new ModelScope);
+
+        // Register Observer
         ModelName::observe(ModelObserver::class);
     }
 
