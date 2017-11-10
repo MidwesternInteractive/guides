@@ -16,9 +16,11 @@ Avoid abbreviations. Come up with a descriptive name.
 ```php
 
     // Bad
+
     $tmpName = 'John';
 
     // Good
+
     $temporaryName = 'John';
 
 
@@ -29,15 +31,17 @@ Avoid object types in names.
 ```php
 
     // Bad
+
     $userArray = ['name' => 'john', 'name' => 'jane'];
 
     $customerOrdersCollection = // collection of orders;
 
     // Good
+
     $users = ['name' => 'john', 'name' => 'jane'];
 
     $customerOrders = // collection of orders
-    
+
 
 ```
 
@@ -53,26 +57,37 @@ Order methods so that methods are as close as possible to other methods they cal
     class ExampleClass
     {
         // Caller method
+
         public function doSomething()
         {
             $users = Users::get();
 
             foreach ($users as $user) {
+
                 if ($this->isUserActive($user)) {
+
                     // do something
+
                 }
+
             }
+
         }
 
         // Method being called
+
         private function isUserActive($user)
         {
+
             // check if user is active
+
         }
     
         private function someAction()
         {
+
             // perform some action.
+            
         }
     }
 
