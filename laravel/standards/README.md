@@ -10,9 +10,10 @@
 Methods should have a single responsiblity. If can't state what your method does in a single sentence, it's doing too much and you should extract some of the functionality into another method.
 
 ```php
-A dumb, made up example, but you get the point.
+// A dumb, made up example, but you get the point.
 
 // Bad
+
 public function sendOrderShippedNotification(User $user)
 {
     // Send an email to admin
