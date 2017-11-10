@@ -48,9 +48,9 @@ The protected variable $guarded allows you to blacklist certain attributes from 
 
 ```php
 protected $guarded = [
-	'column_name_six',
-	'column_name_seven',
-	'column_name_eight'
+'column_name_six',
+'column_name_seven',
+'column_name_eight'
 ];
 ```
 
@@ -68,8 +68,8 @@ The protected variable $dispatchesEvents allows you to bind classes to lifecycle
 
 ```php
 protected $dispatchesEvents = [
-	'saved' => ModelSaved::class,
-	'deleted' => ModelDeleted::class,s
+'saved' => ModelSaved::class,
+'deleted' => ModelDeleted::class
 ];
 ```
 
@@ -82,11 +82,11 @@ The bootstrap method allows you to bootstrap any application service. Such as re
 ```php
 public function boot()
 {
-	// Global Scope Registered
-	static::addGlobalScope(new ModelScope);
+// Global Scope Registered
+static::addGlobalScope(new ModelScope);
 
-	// Register Observer.
-	ModelName::observe(ModelObserver::class);s
+// Register Observer.
+ModelName::observe(ModelObserver::class);
 }
 ```
 
