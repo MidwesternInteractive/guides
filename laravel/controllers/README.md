@@ -41,9 +41,9 @@ If you're simply returning data to a view, or performing a simple delete action 
         public function index(User $user)
         {
             $dashboardInfo = [
-                'orders' => Orders::where('customer_id', $user->id);
-                'analytics' => Analytics::where('customer_id', $user->id);
-                'teamMembers' => TeamMembers::where('team_id', $user->team_id);
+                'orders' => Orders::where('customer_id', $user->id)->get();
+                'analytics' => Analytics::where('customer_id', $user->id)->get();
+                'teamMembers' => TeamMembers::where('team_id', $user->team_id)->get();
             ];
 
             return view('users.dashboard', compact('dashboardInfo'));
