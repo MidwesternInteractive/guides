@@ -3,8 +3,13 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+
+// If Trait
+use App\Traits\ModelName;
+
 // If lifecycle events are used.
 use App\Observers\ModelObserver;
+
 // If Soft Deleting
 use Illuminate\Database\Eloquent\SoftDeletes;
 
@@ -12,6 +17,7 @@ class ModelName extends Model
 {
     // If Soft Deleting
     use SoftDeletes;
+    use ModelName;
 
     /**
      * The table associated with the model.
@@ -112,5 +118,30 @@ class ModelName extends Model
     public function polymorphics()
     {
         return $this->morphMany(ModelName::class, 'polymorphicable');
+    }
+
+    /**
+     * Accessors.
+     *
+     * @param  string  $value
+     * @return string
+     */
+    public function getColumnNameOneAndTwoAttribute()
+    {
+        return $this->column_name_one . ' ' . $this->column_name_two;
+    }
+
+    /**
+     * Mutators.
+     *
+     * @param  string  $value
+     * @return string
+     */
+    public function setColumnOneAndTwoAttribute($value)
+    {
+        $columns = explode(' ', $value);
+
+        $this->attributes['column_name_one'] = $columns[0];
+        $this->attributes['column_name_two'] = $columns[1];
     }
 }
