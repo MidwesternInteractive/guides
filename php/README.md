@@ -12,14 +12,68 @@
 
 # Standards
 ## Naming
-Avoid abbreviations. 
-Avoid object types in names (user_array, email_collection, UserService, InspectionTrait). Try to come up with a more expressive name.
+Avoid abbreviations. Come up with a descriptive name.
+```php
+
+    // Bad
+    $tmpName = 'John';
+
+    // Good
+    $temporaryName = 'John';
+
+```
+
+Avoid object types in names.
+
+```php
+
+    // Bad
+    $userArray = ['name' => 'john', 'name' => 'jane'];
+    $customerOrdersCollection = // collection of orders;
+
+    // Good
+    $users = ['name' => 'john', 'name' => 'jane'];
+    $customerOrders = // collection of orders
+
+```
+
 Name variables, methods, and classes based on what they are/do.
+
 Treat acronyms as words in names (XmlHttpRequest not XMLHTTPRequest), even if the acronym is the entire name (class Html not class HTML).
 
 ## Organization
 Order methods so that caller methods are earlier in the file than the methods they call.
 Order methods so that methods are as close as possible to other methods they call.
+```php
+
+    class ExampleClass
+    {
+        // Caller method
+        public function doSomething()
+        {
+            $users = Users::get();
+
+            foreach ($users as $user) {
+                if ($this->isUserActive($user)) {
+                    // do something
+                }
+            }
+        }
+
+        // Method being called
+        private function isUserActive($user)
+        {
+            // check if user is active
+        }
+    
+        private function someAction()
+        {
+            // perform some action.
+        }
+    }
+
+```
+
 
 ## Methods
 Place first and closing parenthesis for a function on their own lines.
