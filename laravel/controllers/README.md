@@ -29,21 +29,29 @@ If you're simply returning data to a view, or performing a simple delete action 
     namespace App\Http\Controllers;
 
     use App\Orders;
+
     use App\Analytics;
+
     use App\TeamMembers;
 
     class UserController extends Controller
     {
+
         /*
          * Show a user's dashboard
          * @param App\User
          */
         public function index(User $user)
         {
+
             $dashboardInfo = [
+
                 'orders' => Orders::where('customer_id', $user->id);
+
                 'analytics' => Analytics::where('customer_id', $user->id);
+
                 'teamMembers' => TeamMembers::where('team_id', $user->team_id);
+
             ];
 
             return view('users.dashboard', compact('dashboardInfo'));
@@ -55,7 +63,9 @@ If you're simply returning data to a view, or performing a simple delete action 
          */
         public function destroy($id)
         {
+
             User::find($id)->destory();
+
         }
     }
     
@@ -70,14 +80,18 @@ If you need to do more than fetch some data and return a view, use a [service](h
 
     class UserController extends Controller
     {
+
         /*
          * Store a user
          * @param Illuminate\Http\Request
          */
         public function store(Request $request)
         {
+
             (new StoreUser($request))->store();
+
             return redirect()->route('dashboard');
+            
         }
     }
     
