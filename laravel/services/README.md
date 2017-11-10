@@ -18,7 +18,9 @@ We might need to:
 
     class StoreCustomerAppointment
     {   
+
         private $request;
+
 
         public function (Request $request)
         {
@@ -30,7 +32,9 @@ We might need to:
             $appointment = Appointment::create($this->request->input());
 
             if ($this->userAllowsTextMessages()) {
+
                 (new SendConfirmationText($appointment))->send();
+
             }
 
             (new SendConfirmationEmail($appointment))->send();
@@ -39,8 +43,11 @@ We might need to:
         private function userAllowsTextMessages()
         {
             if (Auth::user()->allows_texts) {
+
                 return true;
+
             }
+            
             return false;
         }
     }
