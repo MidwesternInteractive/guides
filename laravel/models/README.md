@@ -37,7 +37,7 @@ protected $fillable = [
 You can then create a new Model instance and it will accept the values from the request that are in the fillable and ignore the rest on create.
 
 ```php
-$modelName = ModelName::create($request);
+ModelName::create($request);
 ```
 
 ---
@@ -68,8 +68,8 @@ The protected variable $dispatchesEvents allows you to bind classes to lifecycle
 
 ```php
 protected $dispatchesEvents = [
-    'saved' => ModelSaved::class,
-    'deleted' => ModelDeleted::class,
+	'saved' => ModelSaved::class,
+	'deleted' => ModelDeleted::class
 ];
 ```
 
@@ -82,11 +82,11 @@ The bootstrap method allows you to bootstrap any application service. Such as re
 ```php
 public function boot()
 {
-	  // Global Scope Registered
-	  static::addGlobalScope(new ModelScope);
+	// Global Scope Registered
+	static::addGlobalScope(new ModelScope);
 
-	  // Register Observer.
-	  ModelName::observe(ModelObserver::class);
+	// Register Observer.
+	ModelName::observe(ModelObserver::class);
 }
 ```
 
