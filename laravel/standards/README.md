@@ -383,3 +383,18 @@ return ($test == $result);
 ---
 
 ## Loops
+
+Use foreach for array / object traversal
+
+```php
+// Bad
+for ($i = 0; $i < count($users); $i++) {
+    //...
+}
+
+// Good
+foreach ($users as $user) {
+    //...
+}
+```
+
