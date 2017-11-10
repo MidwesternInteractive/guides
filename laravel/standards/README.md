@@ -7,6 +7,44 @@
 ---
 
 ## Methods
+Methods should have a single responsiblity. If can't state what your method does in a single sentence, it's doing too much and you should extract some of the functionality into another method.
+
+```php
+A dumb, made up example, but you get the point.
+
+// Bad
+public function sendOrderShippedNotification(User $user)
+{
+    // Send an email to admin
+    Mail::to($user->email)->send(new OrderShipped($order));
+
+    // Update user's analytics
+    $totalOrders = Order::where('user_id', $order->user_id)->get();
+    $analytics = Analytics::where('user_id', $order->user_id)->get();
+    $analytics->total_orders = $totalOrders->count();
+}
+
+// Good
+
+public function sendOrderShippedNotification(Order $order)
+{
+    // Send an email to admin
+    Mail::to($user->email)->send(new OrderShipped($order));
+    $this->updateOrderAnalytics($order);
+}
+
+public function updateOrderAnalytics($order)
+{
+    // Update user's analytics
+    $totalOrders = Order::where('user_id', $order->user_id)->get();
+    $analytics = Analytics::where('user_id', $order->user_id)->get();
+    $analytics->total_orders = $totalOrders->count();
+    $analytics->save();
+}
+
+```
+
+    
 Order methods so that caller methods are earlier in the file than the methods they call, and so methods are as close as possible to other methods they call.
 
 ```php
