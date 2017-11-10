@@ -7,15 +7,15 @@ use Illuminate\Database\Eloquent\Model;
 // If Trait
 use App\Traits\ModelName;
 
-// If lifecycle events are used.
-use App\Observers\ModelObserver;
-
 // If Soft Deleting
 use Illuminate\Database\Eloquent\SoftDeletes;
 
+// If lifecycle events are used.
+use App\Observers\ModelObserver;
+
 class ModelName extends Model
 {
-    // If Soft Deleting
+    // If Soft Deleting / Trait
     use SoftDeletes;
     use ModelName;
 
