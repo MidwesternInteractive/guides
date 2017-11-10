@@ -81,13 +81,13 @@ The bootstrap method allows you to bootstrap any application service. Such as re
 
 ```php
 public function boot()
-	{
-	    // Global Scope Registered
-	    static::addGlobalScope(new ModelScope);
+{
+	  // Global Scope Registered
+	  static::addGlobalScope(new ModelScope);
 
-	    // Register Observer.
-	    ModelName::observe(ModelObserver::class);
-	}
+	  // Register Observer.
+	  ModelName::observe(ModelObserver::class);
+}
 ```
 
 ---
