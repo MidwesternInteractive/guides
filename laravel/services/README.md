@@ -25,9 +25,6 @@ We might need to:
             $this->request = $request;
         }
 
-        // Create the appointment, check that user allows text messages to be sent to them, 
-        // send a notification email to the system administrator
-
         public function createNewAppointment()
         {
             $appointment = Appointment::create($this->request->input());
