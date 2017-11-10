@@ -2,7 +2,12 @@ Services are what handle much of the heavy lifting in the application.
 
 Services should be small classes that are responsible for one job. As a general rule, if you were to state the purpose of the class, and you had to use a conjunction (and, but, or, etc.), odds are the class is doing too much.
 
-Let's say a customer created a new appointment. We might need to store the appointment, send a notification emails to the system admin, and send out a confirmation text to the customer.
+Let's say a customer created a new appointment, and we passed the request object from the controller to the StoreCustomerAppointment service. 
+
+We might need to: 
+- Store the appointment
+- send a notification email to the system admin 
+- send out a confirmation text to the customer
 
 ```php
     namespace App\Http\Services;
