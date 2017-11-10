@@ -34,7 +34,7 @@ protected $fillable = [
 ];
 ```
 
-You can then create a new Model instance by doing the following.
+You can then create a new Model instance and it will accept the values from the request that are in the fillable and ignore the rest on create.
 
 ```php
 $modelName = ModelName::create($request);
@@ -43,5 +43,20 @@ $modelName = ModelName::create($request);
 
 ## Guarded
 
+The guarded variable $guarded allows you to protect certain attributes from being mass assignable on create without having to explicitly define them.
 
+```php
+protected $guarded = [
+    'column_name_six',
+    'column_name_seven',
+    'column_name_eight'
+];
+```
+
+You can then create a new Model instance and ignore the guarded attributes.
+
+```php
+ModelName::create($request);
+```
+---
 
