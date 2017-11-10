@@ -69,7 +69,7 @@ The protected variable $dispatchesEvents allows you to bind classes to lifecycle
 ```php
 protected $dispatchesEvents = [
 	'saved' => ModelSaved::class,
-	'deleted' => ModelDeleted::class,
+	'deleted' => ModelDeleted::class,s
 ];
 ```
 
@@ -86,7 +86,7 @@ public function boot()
 	static::addGlobalScope(new ModelScope);
 
 	// Register Observer.
-	ModelName::observe(ModelObserver::class);
+	ModelName::observe(ModelObserver::class);s
 }
 ```
 
