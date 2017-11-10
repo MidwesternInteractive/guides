@@ -37,7 +37,7 @@ protected $fillable = [
 You can then create a new Model instance and it will accept the values from the request that are in the fillable and ignore the rest on create.
 
 ```php
-$modelName = ModelName::create($request);
+ModelName::create($request);
 ```
 
 ---
