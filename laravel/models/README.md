@@ -3,7 +3,7 @@
 - Fillables
 - Guarded
 - Events
-- Boot
+- Boot Method
 - Local Scope
 - Relationships
 - Accessors
@@ -75,7 +75,7 @@ protected $dispatchesEvents = [
 
 ---
 
-## Boot
+## Boot Method
 
 The bootstrap method allows you to bootstrap any application service. Such as register Scopes, Observers, Events, and so on...
 
