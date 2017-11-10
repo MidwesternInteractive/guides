@@ -21,6 +21,7 @@ Avoid abbreviations. Come up with a descriptive name.
     // Good
     $temporaryName = 'John';
 
+
 ```
 
 Avoid object types in names.
@@ -29,11 +30,14 @@ Avoid object types in names.
 
     // Bad
     $userArray = ['name' => 'john', 'name' => 'jane'];
+
     $customerOrdersCollection = // collection of orders;
 
     // Good
     $users = ['name' => 'john', 'name' => 'jane'];
+
     $customerOrders = // collection of orders
+    
 
 ```
 
