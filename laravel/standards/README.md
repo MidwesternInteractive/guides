@@ -297,6 +297,23 @@ $names = [
 ];
 ```
 
+Negate the comma after the last item in an array, it's an unecessary character
+```php
+// Bad
+$names = [
+    'Han Solo',
+    'Luke Skywalker',
+    'Obi Wan',
+];
+
+// Good
+$names = [
+    'Han Solo',
+    'Luke Skywalker',
+    'Obi Wan'
+];
+```
+
 ---
 
 ## Objects
@@ -316,7 +333,7 @@ $new_object->value_2 = 'Defined Value 2';
 // Good
 $new_object = (object) [
     'value_1' => 'Defined Value 1',
-    'value_2' => 'Defined Value 2',
+    'value_2' => 'Defined Value 2'
 ];
     
 ```
