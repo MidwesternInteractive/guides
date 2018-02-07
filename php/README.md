@@ -11,6 +11,37 @@
 # Code Editor
 
 # Standards
+## Commenting
+Add spaces between single line comment operator and text
+```php
+    // Bad
+    //this is comment
+
+    // Good
+    // This is a good single line comment
+```
+
+Block comments/documentation
+```php
+    // Good
+    /**
+     * Description of what the next method or script does
+     * the description requires a bit more descritive text
+     * notice how we split it up into separate lines
+     *
+     * @author ryandoss (github or bitbucket username)
+     * @param  boolean   $myBool
+     * @return ClassName $classObject
+     */
+    
+    // Bad
+    /*
+    This is what my mothod does, it does this and that, I will put this all in one long annoying ling
+
+    ryandoss added this
+    */
+```
+
 ## Naming
 Avoid abbreviations. Come up with a descriptive name.
 ```php
