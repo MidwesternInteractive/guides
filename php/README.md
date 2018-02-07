@@ -36,7 +36,7 @@ Block comments/documentation
     
     // Bad
     /*
-    This is what my mothod does, it does this and that, I will put this all in one long annoying ling
+    This is what my method does, it does this and that, I will put this all in one long annoying line of text here.
 
     ryandoss added this
     */
