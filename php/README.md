@@ -15,15 +15,18 @@
 Add spaces between single line comment operator and text
 ```php
     // Bad
+
     //this is comment
 
     // Good
+
     // This is a good single line comment
 ```
 
 Block comments/documentation
 ```php
     // Good
+
     /**
      * Description of what the next method or script does
      * the description requires a bit more descritive text
@@ -33,8 +36,9 @@ Block comments/documentation
      * @param  boolean   $myBool
      * @return ClassName $classObject
      */
-    
+
     // Bad
+
     /*
     This is what my method does, it does this and that, I will put this all in one long annoying line of text here.
 
