@@ -164,12 +164,12 @@ Declare method parameters with lower camel case.
 
 ```php
 // Bad
-function foo ($parameter_one, $ParameterTwo) {
+function foo($parameter_one, $ParameterTwo) {
     //
 }
 
 // Good
-function foo ($parameterOne, $parameterTwo) {
+function foo($parameterOne, $parameterTwo) {
     //
 }
 ```
