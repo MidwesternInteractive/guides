@@ -76,12 +76,12 @@ Place first and closing parenthesis for a function on their own lines.
 
 ```php
 // Bad
-function $foo($bar) {
+function foo($bar) {
     return $bar
 }
 
 // Good
-function $foo($bar)
+function foo($bar)
 {
     return $bar;
 }
@@ -116,13 +116,13 @@ Don't include spaces next to the start or closing parenthesis, or brackets.
 
 ```php
 // Bad
-function $foo( $bar )
+function foo( $bar )
 {
     return $bar;
 }
 
 // Good
-function $foo($bar)
+function foo($bar)
 {
     return $bar;
 }
@@ -152,16 +152,36 @@ $var = "Value";
 
 // Good
 $var = 'Value';
+
+// Only exception is when apostrophes as necessary
+$my_array = [
+    'My String',
+    "Tom's String"
+];
 ```
 
-Declare variables with snake case.
+Declare method parameters with lower camel case.
 
 ```php
 // Bad
-$canYouReadThis = 'Not very easy.';
+function foo ($parameter_one, $ParameterTwo) {
+    //
+}
 
 // Good
-$you_can_read_this = 'Much better.';
+function foo ($parameterOne, $parameterTwo) {
+    //
+}
+```
+
+Declare variables inside of method with snake case.
+
+```php
+// Bad
+$thisIsNotRight = 'Do not do this.';
+
+// Good
+$do_this_instead = 'Much better.';
 ```
 
 Avoid abbreviations. 
