@@ -160,7 +160,7 @@ $my_array = [
 ];
 ```
 
-Declare method parameters with lower camel case.
+Declare method parameters with lower camel case. This will allow us to easily identify which variables were declared outside the method and which are method specific.
 
 ```php
 // Bad
