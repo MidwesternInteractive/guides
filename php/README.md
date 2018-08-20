@@ -236,7 +236,7 @@ $names = [
 ];
 ```
 
-In addition you should always set array in declaration instead of two when possible.
+In addition you should always set array in **one** declaration instead of two when possible.
 
 ```php
 // Bad
