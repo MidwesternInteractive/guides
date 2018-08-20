@@ -236,6 +236,22 @@ $names = [
 ];
 ```
 
+In addition you should always set array in declaration instead of two when possible.
+
+```php
+// Bad
+$names['Han'] = 'Solo';
+$names['Luke'] = 'Skywalker';
+$names['Obi'] = 'Wan';
+
+// Good
+$names = [
+    'Han' => 'Solo',
+    'Luke' => 'Skywalker',
+    'Obi' => 'Wan'
+];
+```
+
 ## Objects
 ## Conditionals
 
